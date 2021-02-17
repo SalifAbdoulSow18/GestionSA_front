@@ -47,6 +47,64 @@ Si tel n'est pas le cas,
        -APPRENANT = {email: 'nathalie44@masson.com', password: passer1234'}
        -CM = {email: 'hortense68@david.com', password: passer1234'}
 
+##################################################################
+
+Une fois le projet lancé, vous serrez en face d’un formulaire de connexion qui 
+ requiert un username et un mot de passe.  Pour se connecter :
+
+_   tout les champs sont obligatoires
+_   les données doivent être valides.
+_   Utilisateur doit être en règle c’est à dire pas archivé.
+
+########################################################################
+
+Lorsque des formateurs et apprenants se connectent ils ouront juste la possibilité
+de verifier que leur propre information et peuvent les modifiers mais n'auront
+accès aux autre fonctionnalités
+
+######################################################################
+
+Une fois connectée, vous serez rediriger vers une page dashbord. Au niveau du navbar à droite,
+nous avons le profil et la photo de l’utilisateur qui s’est connecté ; à gauche nous avons les différentes fonctionnalités  de l’appliaction à savoir les profils, les users , les compétences…
+
+1/profil
+
+Concernant les profils, nous avons la liste en face de nous avec  différentes actions qu’on peut réaliser :
+
+_  Nous pouvons ajouter un profil directement
+
+_  Modifier un profil existant
+
+_  Suppression d’un profil (en supprimant un profil, on supprime aussi ces utilisateurs associés)
+
+_  Lister les utilisateurs d’un profil 
+
+ Toutes ces actions se font instantanément,pas besoin de rafraîchir la page. 
+
+ #########################################################################
+ 2/ User :
+
+Concernant les utilisateurs, nous avons la liste en face de nous avec  différentes actions qu’on peut réaliser :
+
+_  Possibilité de rechercher un utilisateur 
+
+_  Nous pouvons ajouter un utilisateur 
+
+_  Modifier un utilisateur existant
+
+_  Suppression d’un utilisateur 
+
+_   Possibilité de lister les utilisateurs archivés 
+
+_   Possibilité de restaurer un utilisateur archivé
+
+
+ Toutes ces actions se font instantanément,pas besoin de rafraîchir la page. 
+
+ #########################################################################
+       Deconnexion
+Pour se déconnecter, il faut juste cliquer le profil et choisir l’option logout puis confirmer.
+
 
 
 
