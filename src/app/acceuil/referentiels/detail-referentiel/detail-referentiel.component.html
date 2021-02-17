@@ -1,0 +1,24 @@
+<h6 class="display-4 text-center">Détails du Referentiel: {{referentiel.libelle}}</h6>
+<div class="row">
+  <div class="col-sm-8 m-auto">
+    <button class="btn btn-info mb-2" [routerLink]="['/home','list-referentiels']"><i class="fas fa-undo-alt">Retour</i></button>
+    <button class="btn btn-warning float-right mb-2" [routerLink]="['/home','edit-referentiel', referentiel.id]"><i class="far fa-edit">Edit</i></button>
+    <div class="card text-center">
+      <h4><span class="font-weight-bold">Libelle:</span> {{referentiel.libelle}}</h4>
+      <hr />
+      <h4><span class="font-weight-bold">Presentation:</span> {{referentiel.presentation}}</h4>
+      <hr />
+      <h4><span class="font-weight-bold">Critere Evaluation:</span> {{referentiel.critereEvaluation}}</h4>
+      <hr />
+      <h4><span class="font-weight-bold">Critere Admission:</span> {{referentiel.critereAdmission}}</h4>
+      <hr />
+      <h4><span class="font-weight-bold mr-3">Programme:</span>  <button class="btn btn-outline-info" (click)="openProgramme()">Programme</button></h4>
+      <hr />
+      <h4 class="font-weight-bold">Mes Groupe de Competences</h4>
+      <div class="card-body" *ngFor="let grpCompetence of referentiel.groupeCompetences">
+        <h5 class="card-text">- {{grpCompetence.libelle}}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+

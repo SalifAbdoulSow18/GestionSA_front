@@ -1,0 +1,13 @@
+<div style="width: 18rem; margin-left: 5%; text-align: center;">
+  <div class="card-header bg-info text-light font-weight-bold">{{referentiel.libelle}}
+    <a [routerLink]="['/home','edit-referentiel', referentiel.id]"><i class="fa fa-edit"></i></a>
+    <a (click)="removeGrpCompetence(referentiel.id)"><i class="fa fa-trash"></i></a>
+  </div>
+  <div class="card-body">
+    <p class="card-title"><span>Presentation:</span>  {{referentiel.presentation | summarize:50}}</p>
+    <button class="btn btn-outline-info" (click)="openProgramme()">Programme</button>
+    <div class="card-footer"><span>Critere Evaluation:</span>  {{referentiel.critereEvaluation | summarize:50}}</div>
+  </div>
+  <div class="card-footer"><span>Critere Admission</span>   {{referentiel.critereAdmission | summarize:50}}</div>
+  <a class="btn w-75 btn-outline-warning" [routerLink]="['/home','list-referentiels',referentiel.id]">Detail</a>
+</div>

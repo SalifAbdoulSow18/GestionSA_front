@@ -1,0 +1,32 @@
+<h1 class="text-center">La liste de mes Promo</h1>
+<hr>
+<div class="row">
+  <div class="col-sm-10 m-auto">
+    <button class="btn btn-info float-right mb-2" [routerLink]="['/home','add-promo']" type="submit" ><i class="fa fa-user-plus">Créer</i></button>
+    <table class="table table-info">
+      <thead>
+      <tr class="bg-dark text-center" style="color: white">
+        <th scope="col">Libelle</th>
+        <th scope="col">Date Debut</th>
+        <th scope="col">Date Fin</th>
+        <th scope="col">Annee Academique</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let promo of promos">
+      <tr class="text-center">
+        <td>{{promo.libelle}}</td>
+        <td>{{promo.dateDebut}}</td>
+        <td>{{promo.dateFin}}</td>
+        <td>{{promo.annee}}</td>
+        <td>
+          <a class="btn btn-outline-info mr-2" [routerLink]="['/home','list-promos', promo.id]">Details</a>
+          <a class="btn btn-outline-warning mr-2" [routerLink]="['/home','edit-promo', promo.id]">Edit</a>
+          <a  class="btn btn-outline-danger mt-2">Delete</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

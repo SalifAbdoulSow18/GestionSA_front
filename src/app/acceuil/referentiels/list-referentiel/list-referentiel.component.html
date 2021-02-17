@@ -1,0 +1,7 @@
+<h1 class="text-center">La liste des Referentiels</h1>
+<button class="btn btn-info float-right mb-2" [routerLink]="['/home','add-referentiel']" type="submit" ><i class="fa fa-user-plus">Créer</i></button>
+<div class="row float-right bg-info">
+<app-item-referentiel [referentiel]="ref" *ngFor="let ref of referentiels | paginate : { itemsPerPage: 6, currentPage: p }"  class="card col-sm-6 col-md-4 mb-4"></app-item-referentiel>
+</div>
+
+<pagination-controls class="d-flex justify-content-center" (pageChange)="p = $event"></pagination-controls>

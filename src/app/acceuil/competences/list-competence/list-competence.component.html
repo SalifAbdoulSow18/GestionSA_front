@@ -1,0 +1,52 @@
+<button class="btn btn-info mt-2" [routerLink]="['/home','add-competence']" type="submit" ><i class="fa fa-user-plus">Créer</i></button>
+<button class="btn btn-warning modif mt-2" [disabled]="edit==0" [routerLink]="['/home','edit-competence', idEdit]" type="submit" ><i class="far fa-edit">Edit</i></button>
+<button class="btn btn-danger float-right mt-2" [disabled]="edit==0" (click)="removeCompetence(idEdit)"type="submit" ><i class="fa fa-trash">Delete</i></button>
+<div class="row complet mt-2">
+  <div class="col-5 listcomp bg-danger float-left">
+    <span style="font-size: 30px; font-weight: bold; text-align: center">La liste de mes Competences</span>
+    <select class="col-lg-10 selection" [(ngModel)]="selectedOption" (ngModelChange)="optionChoised($event)">
+      <option>Select a competence</option>
+      <option *ngFor="let competence of Competences" value="{{competence.id}}">{{competence.nomCompetence}}</option>
+    </select>
+  </div>
+  <div class="col-7 float-right">
+    <div>
+        <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#multiCollapseExample1" aria-expanded="false" aria-controls="multiCollapseExample1">Niveau 1</button>
+        <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Niveau 2</button>
+        <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Niveau 3</button>
+        <div class="col mt-4 mesLabel">
+          <div class="collapse multi-collapse col" id="multiCollapseExample1">
+            <div class="card card-body col-6 float-left">
+              <label>Critere d'evaluation </label>
+              <span>{{niveau1?.critereEvaluation}}</span>
+            </div>
+            <div class="card card-body col-6 float-right">
+              <label>Groupe d'action </label>
+              <span>{{niveau1?.groupeAction}}</span>
+            </div>
+          </div>
+          <div class="collapse multi-collapse" id="multiCollapseExample2">
+            <div class="card card-body col-6 float-left">
+              <label>Critere d'evaluation </label>
+              <span>{{niveau2?.critereEvaluation}}</span>
+            </div>
+            <div class="card card-body col-6 float-right">
+              <label>Groupe d'action </label>
+              <span>{{niveau2?.groupeAction}}</span>
+            </div>
+          </div>
+          <div class="collapse multi-collapse" id="multiCollapseExample3">
+            <div class="card card-body col-6 float-left">
+              <label>Critere d'evaluation </label>
+              <span>{{niveau3?.critereEvaluation}}</span>
+            </div>
+            <div class="card card-body col-6 float-right">
+              <label>Groupe d'action </label>
+              <span>{{niveau3?.groupeAction}}</span>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+

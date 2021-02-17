@@ -1,0 +1,12 @@
+.profile_image{
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: #01e6fe 4px solid;
+}
+.submit{
+  font-weight: bold;
+  font-size: larger;
+  margin-top: 25px;
+  width: 35%;
+}

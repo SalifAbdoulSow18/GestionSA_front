@@ -1,0 +1,27 @@
+textarea {
+  resize: none;
+}
+input {
+  height: 50px;
+}
+select {
+  height: 50px;
+  border-right: 3px solid black ;
+  border-bottom: 2px solid black ;
+}
+ng-multiselect-dropdown {
+  height: 50px;
+  border-right: 3px solid black ;
+  border-bottom: 2px solid black ;
+}
+textarea {
+  height: 50px;
+  border-right: 3px solid black ;
+  border-bottom: 2px solid black ;
+}
+.btn {
+  width: 25%;
+  left: 10px;
+  margin-left: 5px;
+}
+

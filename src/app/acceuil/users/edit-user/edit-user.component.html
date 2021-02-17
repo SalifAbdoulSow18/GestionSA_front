@@ -1,0 +1,70 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="row col-6 m-auto p-3">
+  <div class="col-8 float-right">
+    <div class="form-group col-lg-10 p-2">
+      <label>First Name</label>
+      <input type="text" name="prenom" [(ngModel)]="prenom" formControlName="prenom" class="form-control" placeholder="First name" [ngClass]="{'is-invalid': submitted && f.prenom.errors }">
+    </div>
+    <div class="text-danger" *ngIf="submitted && f.prenom.errors">
+      <div *ngIf="f.prenom.errors.required">Prenom is required</div>
+    </div>
+    <div class="form-group col-lg-10 p-2">
+      <label>Last Name</label>
+      <input type="text" name="nom" [(ngModel)]="nom" formControlName="nom" class="form-control" placeholder="Last name" [ngClass]="{'is-invalid': submitted && f.nom.errors }">
+    </div>
+    <div class="text-danger" *ngIf="submitted && f.nom.errors">
+      <div *ngIf="f.nom.errors.required">Nom is required</div>
+    </div>
+    <div class="form-group col-lg-10 p-2">
+      <label>UserName</label>
+      <input type="text" name="username" [(ngModel)]="username" formControlName="username" class="form-control" placeholder="UserName" [ngClass]="{'is-invalid': submitted && f.username.errors }">
+    </div>
+    <div class="text-danger" *ngIf="submitted && f.username.errors">
+      <div *ngIf="f.username.errors.required">Username is required</div>
+    </div>
+    <div class="form-group col-lg-10 p-2">
+      <label>Phone Number</label>
+      <input type="text" [(ngModel)]="phone" formControlName="phone" name="phone" class="form-control" placeholder="Phone Number" [ngClass]="{'is-invalid': submitted && f.phone.errors }">
+    </div>
+    <div class="text-danger" *ngIf="submitted && f.phone.errors">
+      <div *ngIf="f.phone.errors.required">Phone is required</div>
+    </div>
+    <!--<div class="form-group col-lg-10 p-2">
+      <label>Address</label>
+      <input type="address" [(ngModel)]="address" formControlName="address" name="address" class="form-control" placeholder=" Your Address" [ngClass]="{'is-invalid': submitted && f.address.errors }">
+    </div>
+    <div class="text-danger" *ngIf="submitted && f.address.errors">
+      <div *ngIf="f.address.errors.required">Address is required</div>
+    </div>-->
+    <div class="col-lg-10 p-2">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="email" formControlName="email" class="form-control" placeholder="email@example.com" [ngClass]="{'is-invalid': submitted && f.email.errors }">
+    </div>
+    <div class="text-danger" *ngIf="submitted && f.email.errors">
+      <div *ngIf="f.email.errors.required">email is required</div>
+      <div *ngIf="f.email.errors.email">email n'est pas valide</div>
+    </div>
+    <div class="col-lg-10 p-2">
+      <label>Password</label>
+      <input type="password" [(ngModel)]="password" formControlName="password" class="form-control" placeholder="Password" [ngClass]="{'is-invalid': submitted && f.password.errors }">
+    </div>
+    <div class="text-danger" *ngIf="submitted && f.password.errors">
+      <div *ngIf="f.password.errors.required">password is required</div>
+      <div *ngIf="f.password.errors.minlength">password n'est pas valide</div>
+    </div>
+    <div class="custom-file col-lg-10">
+      <input type="file" accept=".jpg, .png, .jpeg" [(ngModel)]="photo" (change)="uploadefiler($event)" formControlName="photo"  id="customFileLang">
+      <label class="custom-file-label" for="customFileLang">Select file</label>
+    </div>
+  </div>
+
+  <div class="col-4 p-5 float-left" *ngIf="link">
+    <img  [src]="link" class="profile_image" alt="">
+    <h4 style="text-align: center">{{nom}} {{prenom}}</h4>
+  </div>
+  <div class="col-4 p-5 float-left" *ngIf="!link">
+    <img src="data:image/png;base64,{{photo}}" class="profile_image" alt="">
+    <h4 style="text-align: center">{{nom}} {{prenom}}</h4>
+  </div>
+  <button class="btn btn-danger float-left mr-3 submit" [routerLink]="['/home','list-users']" >Annuler</button>
+  <button type="submit" class="btn btn-info float-right submit">Ajouter un User</button>
+</form>

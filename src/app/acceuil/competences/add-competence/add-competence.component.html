@@ -1,0 +1,124 @@
+<h1 class="text-center">L'ajout de Competence</h1>
+<form class="row col-10 m-auto p-4" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div class="col p-4 m-auto">
+    <div class="row m-3">
+      <label  class="col-3 float-left">Groupe de Competence</label>
+      <ng-multiselect-dropdown
+        name="gprCompetence" id="gprCompetence" class="col-8 float-right"
+        formControlName="gprCompetence"
+        [ngClass]="{'is-invalid': submitted && f.gprCompetence.errors }"
+        [placeholder]="'select groupes competences'"
+        [(ngModel)]="selectedItems"
+        [settings]="dropdownSettings"
+        [data]="dropdownList"
+        (onSelect)="onItemSelect($event)"
+        (onSelectAll)="onSelectAll($event)"
+      >
+      </ng-multiselect-dropdown>
+    </div>
+    <div class="text-danger text-center" *ngIf="submitted && f.gprCompetence.errors">
+      <div *ngIf="f.gprCompetence.errors.required">Groupe Competence is required</div>
+    </div>
+    <div class=" row m-3">
+      <label class="col-3 float-left">Libelle</label>
+      <input type="text" class="col-8 float-right"
+             placeholder="Créer une competence"
+             [(ngModel)]="nomCompetence"
+             formControlName="nomCompetence"
+             [ngClass]="{'is-invalid': submitted && f.nomCompetence.errors }"
+      >
+    </div>
+    <div class="text-danger text-center" *ngIf="submitted && f.nomCompetence.errors">
+      <div *ngIf="f.nomCompetence.errors.required">Libelle is required</div>
+    </div>
+    <div class="">
+      <p>
+        <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Niveau 1</a>
+        <a class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Niveau 2</a>
+        <a class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Niveau 3</a>
+      </p>
+      <div class="row">
+        <div class="col">
+          <div class="" id="multiCollapseExample1">
+            <div class="card card-body">
+              <label>Critere d'Admission</label>
+            <textarea [(ngModel)]="critereAction1"
+                      formControlName="critereAction1"
+                      [ngClass]="{'is-invalid': submitted && f.critereAction1.errors }">
+
+            </textarea>
+            </div>
+            <div class="text-danger" *ngIf="submitted && f.critereAction1.errors">
+              <div *ngIf="f.critereAction1.errors.required">Critere Action is required</div>
+            </div>
+            <div class="card card-body">
+              <label>Critere d'Evaluation</label>
+              <textarea [(ngModel)]="critereEvaluation1"
+                        formControlName="critereEvaluation1"
+                        [ngClass]="{'is-invalid': submitted && f.critereEvaluation1.errors }">
+
+              </textarea>
+            </div>
+            <div class="text-danger" *ngIf="submitted && f.critereEvaluation1.errors">
+              <div *ngIf="f.critereEvaluation1.errors.required">Critere Evaluation is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="" id="multiCollapseExample2">
+            <div class="card card-body">
+              <label>Critere d'Admission</label>
+              <textarea [(ngModel)]="critereAction2"
+                        formControlName="critereAction2"
+                        [ngClass]="{'is-invalid': submitted && f.critereAction2.errors }">
+
+              </textarea>
+            </div>
+            <div class="text-danger" *ngIf="submitted && f.critereAction2.errors">
+              <div *ngIf="f.critereAction2.errors.required">Critere Action is required</div>
+            </div>
+            <div class="card card-body">
+              <label>Critere d'Evaluation</label>
+              <textarea [(ngModel)]="critereEvaluation2"
+                        formControlName="critereEvaluation2"
+                        [ngClass]="{'is-invalid': submitted && f.critereEvaluation2.errors }">
+
+              </textarea>
+            </div>
+            <div class="text-danger" *ngIf="submitted && f.critereEvaluation2.errors">
+              <div *ngIf="f.critereEvaluation2.errors.required">Critere Evaluation is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="" id="multiCollapseExample3">
+            <div class="card card-body">
+              <label>Critere d'Admission</label>
+              <textarea [(ngModel)]="critereAction3"
+                        formControlName="critereAction3"
+                        [ngClass]="{'is-invalid': submitted && f.critereAction3.errors }">
+
+              </textarea>
+            </div>
+            <div class="text-danger" *ngIf="submitted && f.critereAction3.errors">
+              <div *ngIf="f.critereAction3.errors.required">Critere Action is required</div>
+            </div>
+            <div class="card card-body">
+              <label>Critere d'Evaluation</label>
+              <textarea [(ngModel)]="critereEvaluation3"
+                        formControlName="critereEvaluation3"
+                        [ngClass]="{'is-invalid': submitted && f.critereEvaluation3.errors }">
+
+              </textarea>
+            </div>
+            <div class="text-danger" *ngIf="submitted && f.critereEvaluation3.errors">
+              <div *ngIf="f.critereEvaluation3.errors.required">Critere Evaluation is required</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-danger float-left mr-3 mt-4 submit" [routerLink]="['/home','list-competences']" >Annuler</button>
+    <button type="submit" class="btn btn-info mt-4  float-right submit">Soumettre</button>
+  </div>
+</form>

@@ -1,0 +1,19 @@
+<div class="contenaire">
+  <div class="login">
+    <h1>Login</h1>
+    <form [formGroup]="formLogin" (ngSubmit)= "onSubmit()">
+      <input type="email" name="username" formControlName="email" class="form-control" placeholder="Email" [(ngModel)]="email" [ngClass]="{'is-invalid': submitted && f.email.errors }" required/>
+      <div class="text-danger" *ngIf="submitted && f.email.errors">
+        <div *ngIf="f.email.errors.required">email is required</div>
+        <div *ngIf="f.email.errors.email">email n'est pas valide</div>
+      </div>
+      <input type="password" name="password" formControlName="password" class="form-control" placeholder="Password" [(ngModel)]="password" [ngClass]="{'is-invalid': submitted && f.password.errors }" required/>
+      <div class="text-danger" *ngIf="submitted && f.password.errors">
+        <div *ngIf="f.password.errors.required">password is required</div>
+        <div *ngIf="f.password.errors.minlength">password n'est pas valide</div>
+      </div>
+      <button type="submit" class="btn btn-warning btn-block btn-large">Sign In</button>
+    </form>
+  </div>
+</div>
+

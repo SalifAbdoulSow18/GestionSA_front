@@ -1,0 +1,124 @@
+<h1 class="text-center">L'ajout de Promo</h1>
+<form class="row col-10 m-auto p-4" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div class="col p-4 m-auto">
+    <div class="row m-3">
+      <label  class="col-3 float-left">Choix de la langue</label>
+      <select class="col-8 float-right" [(ngModel)]="langue"
+              formControlName="langue"
+              [ngClass]="{'is-invalid': submitted && f.langue.errors }">
+        <option>Choix de la Langue</option>
+        <option>Français</option>
+        <option>Anglais</option>
+        <option>Deutsch</option>
+      </select>
+    </div>
+    <div class="text-danger text-center" *ngIf="submitted && f.langue.errors">
+      <div *ngIf="f.langue.errors.required">Langue is required</div>
+    </div>
+    <div class=" row m-3">
+      <label class="col-3 float-left">Titre</label>
+      <input type="text" class="col-8 float-right" placeholder="Titre" [(ngModel)]="title"
+             formControlName="title"
+             [ngClass]="{'is-invalid': submitted && f.title.errors }">
+    </div>
+    <div class="text-danger text-center" *ngIf="submitted && f.title.errors">
+      <div *ngIf="f.title.errors.required">Title is required</div>
+    </div>
+    <div class="row m-3">
+      <label class="col-3 float-left">Description de la promotion</label>
+      <textarea class="col-8 float-right" [(ngModel)]="description"
+                formControlName="description"
+                [ngClass]="{'is-invalid': submitted && f.description.errors }"></textarea>
+    </div>
+    <div class="text-danger text-center" *ngIf="submitted && f.description.errors">
+      <div *ngIf="f.description.errors.required">Descripton is required</div>
+    </div>
+    <div class="row m-3">
+      <label class="col-3 float-left">Reference Agate</label>
+      <input type="text" class="col-8 float-right" [(ngModel)]="agate"
+             formControlName="agate"
+             [ngClass]="{'is-invalid': submitted && f.agate.errors }">
+    </div>
+    <div class="text-danger text-center" *ngIf="submitted && f.agate.errors">
+      <div *ngIf="f.agate.errors.required">Reference Agate is required</div>
+    </div>
+    <div class="row m-3">
+      <label class="col-3 float-left">Choix de la fabrique</label>
+      <select class="form-control col-8 float-right" [(ngModel)]="fabrique"
+              formControlName="fabrique"
+              [ngClass]="{'is-invalid': submitted && f.fabrique.errors }">
+        <option>Sonatel Academy</option>
+        <option>Simplon</option>
+      </select>
+    </div>
+    <div class="text-danger text-center" *ngIf="submitted && f.fabrique.errors">
+      <div *ngIf="f.fabrique.errors.required">Fabrication is required</div>
+    </div>
+    <div class="row m-3">
+      <label class="col-3 float-left">Choisir le Referentiel</label>
+      <select class="form-control col-8 float-right" [(ngModel)]="referent"
+              formControlName="referent"
+              [ngClass]="{'is-invalid': submitted && f.referent.errors }">
+        <option>Choisir le Referentiel</option>
+        <option *ngFor="let referentiel of myReferentiel" value="{{referentiel.id}}">{{referentiel.libelle}}</option>
+      </select>
+    </div>
+    <div class="text-danger text-center" *ngIf="submitted && f.referent.errors">
+      <div *ngIf="f.referent.errors.required">Referentiel is required</div>
+    </div>
+    <div class="row m-3">
+      <label class="col-3 float-left">Ajouter des Apprenants</label>
+    <ng-multiselect-dropdown
+      name="addApprenant" id="addApprenant" class="col-8 float-right"
+      formControlName="apprenant"
+      [ngClass]="{'is-invalid': submitted && f.apprenant.errors }"
+      [placeholder]="'Ajouter des Apprenants'"
+      [(ngModel)]="selectedItems"
+      [settings]="dropdownSettings"
+      [data]="dropdownList"
+    >
+    </ng-multiselect-dropdown>
+    </div>
+    <div class="text-danger text-center" *ngIf="submitted && f.apprenant.errors">
+      <div *ngIf="f.apprenant.errors.required">Apprenant is required</div>
+    </div>
+    <div class="row m-3">
+      <label class="col-3 float-left">Lieu</label>
+      <input type="text" class="col-8 float-right" [(ngModel)]="lieu"
+             formControlName="lieu"
+             [ngClass]="{'is-invalid': submitted && f.lieu.errors }">
+    </div>
+    <div class="text-danger text-center" *ngIf="submitted && f.lieu.errors">
+      <div *ngIf="f.lieu.errors.required">Lieu is required</div>
+    </div>
+    <div class="row m-3">
+      <label class="col-3 float-left">Date Debut</label>
+      <input type="date" class="col-8 float-right" [(ngModel)]="dateDebut"
+             formControlName="dateDebut"
+             [ngClass]="{'is-invalid': submitted && f.dateDebut.errors }">
+    </div>
+    <div class="text-danger text-center" *ngIf="submitted && f.dateDebut.errors">
+      <div *ngIf="f.dateDebut.errors.required">Date Debut is required</div>
+    </div>
+    <div class="row m-3">
+      <label class="col-3 float-left">Date Fin</label>
+      <input type="date" class="col-8 float-right" [(ngModel)]="dateFin"
+             formControlName="dateFin"
+             [ngClass]="{'is-invalid': submitted && f.dateFin.errors }">
+    </div>
+    <div class="text-danger text-center" *ngIf="submitted && f.dateFin.errors">
+      <div *ngIf="f.dateFin.errors.required">Date Fin is required</div>
+    </div>
+    <div class="row m-3">
+      <label class="col-3 float-left">Annee de la formation</label>
+      <input type="date" class="col-8 float-right" [(ngModel)]="annee"
+             formControlName="annee"
+             [ngClass]="{'is-invalid': submitted && f.annee.errors }">
+    </div>
+    <div class="text-danger text-center" *ngIf="submitted && f.annee.errors">
+      <div *ngIf="f.annee.errors.required">Annee is required</div>
+    </div>
+    <button class="btn btn-danger float-left mr-3 mt-4 submit" [routerLink]="['/home','list-promos']" >Annuler</button>
+    <button type="submit" class="btn btn-info mt-4  float-right submit">Soumettre</button>
+  </div>
+</form>

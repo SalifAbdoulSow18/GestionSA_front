@@ -1,0 +1,42 @@
+<h1 class="text-center">Detail du {{promo.libelle}}</h1>
+<button class="btn btn-info mb-2" [routerLink]="['/home','list-promos']"><i class="fas fa-undo-alt">Retour Liste Promo</i></button>
+<div class="card text-center">
+  <h4><span class="font-weight-bold">Libelle:</span> {{promo.libelle}}</h4>
+  <hr />
+  <h4><span class="font-weight-bold">Description:</span> {{promo.description}}</h4>
+  <hr />
+  <h4><span class="font-weight-bold">Lieu:</span> {{promo.lieu}}</h4>
+  <hr />
+  <h4><span class="font-weight-bold">Date Debut:</span> {{promo.dateDebut}}</h4>
+  <hr />
+  <h4><span class="font-weight-bold mr-3">Date Fin:</span>  {{promo.dateFin}}</h4>
+  <hr />
+  <h4><span class="font-weight-bold">Annee Academique:</span> {{promo.annee}}</h4>
+  <hr />
+  <h4><span class="font-weight-bold mr-3">Langue:</span>  {{promo.langue}}</h4>
+  <hr />
+  <h4><span class="font-weight-bold">Fabrique:</span> {{promo.fabrique}}</h4>
+  <hr />
+  <h4><span class="font-weight-bold mr-3">Reference Agate:</span>  {{promo.referenceAgate}}</h4>
+  <hr />
+</div>
+<div>
+  <h3 class="font-weight-bold text-center">Les Apprenants de la {{promo.libelle}}</h3>
+  <table id="excel-table" class="table table-info">
+    <tr class="bg-dark text-center" style="color: white">
+      <th>Id</th>
+      <th>Prenom</th>
+      <th>Nom</th>
+      <th>Phone</th>
+      <th>Email</th>
+    </tr>
+    <tr *ngFor="let apprenant of promo.apprenants" class="text-center">
+      <td>{{apprenant.id}}</td>
+      <td>{{apprenant.nom}}</td>
+      <td>{{apprenant.prenom}}</td>
+      <td>{{apprenant.phone}}</td>
+      <td>{{apprenant.email}}</td>
+    </tr>
+  </table>
+  <button class="btn btn-success w-100" (click)="exportExcel()">Export to Excel</button>
+</div>

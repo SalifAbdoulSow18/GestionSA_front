@@ -1,0 +1,10 @@
+img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: darkcyan solid 3px;
+  margin: auto;
+}
+.codeQr {
+  margin-left: 40%;
+}

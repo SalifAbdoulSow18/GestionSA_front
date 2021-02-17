@@ -1,0 +1,52 @@
+########################################################################
+Je suppose que vous avez déjà cloné le projet avec la commande:
+
+"git clone https://github.com/SalifAbdoulSow18/SASAngularFilRougeSA.git"
+
+
+########################################################################
+
+Après clonage du projet vous remarquerez qu'il n'y a pas de dossier "node_modules".
+Donc si vous essayez de lancer le serve vous recontrez des erreurs. C'est très
+normale, il vous faut mettre en place les dépendance avec la commande:
+
+                    "npm install"
+
+##########################################################################
+
+Une fois les packages installés vous povez lancer le serveur avec
+
+                  "ng serve"
+
+############################################################################
+ Avant de manipuler les donner vous devez vous assurer que le serveur de la
+ partie backend avec laquel vous echangez est allumé.
+
+############################################################################
+Comme ici notre backend est fait avec le framework symfony, vous devez:
+
+- Allez dans le projet correspondant
+- Une fois dans le projet vous ouvrez le terminal
+- Puis vous lancez le serveur avec la commande: "symfony server:start"
+
+############################################################################
+Et pour terminer assurez vous d'être sure d'avoir: "127.0.0.1:8000"
+qui represente le localhost "127.0.0.1" et le port "8000".
+
+Si tel n'est pas le cas,
+- Allez dans le fichier: "src/environments/environment.ts"
+- Changez le port en fonction de la votre au niveau de "api_url"
+
+####################################################################
+
+       ******************************************************
+       DONNEES:
+
+       -ADMIN = {email: 'michelle37@coste.com', password: passer1234'}
+       -FORMATEUR = {email: 'maillet.alex@gmail.com', password: passer1234'}
+       -APPRENANT = {email: 'nathalie44@masson.com', password: passer1234'}
+       -CM = {email: 'hortense68@david.com', password: passer1234'}
+
+
+
+

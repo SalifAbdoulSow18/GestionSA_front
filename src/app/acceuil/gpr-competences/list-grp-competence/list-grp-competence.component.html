@@ -1,0 +1,8 @@
+<h1 class="text-center">Les Groupes de Competences</h1>
+  <button class="btn btn-info float-right mb-2" [routerLink]="['/home','add-grp-competence']" type="submit" ><i class="fa fa-user-plus">Créer</i></button>
+  <div class="row float-right bg-info">
+    <app-item-grp-competence [groupeCompetence]="grpC" *ngFor="let grpC of grpCompetences | paginate : { itemsPerPage: 6, currentPage: p }"  class="card col-sm-6 col-md-4 mb-4"></app-item-grp-competence>
+      <pagination-controls class="d-flex justify-content-center" (pageChange)="p = $event"></pagination-controls>
+  </div>
+
+

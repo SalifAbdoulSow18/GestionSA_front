@@ -1,0 +1,41 @@
+<h1 class="text-center" xmlns:paginate="http://www.w3.org/1999/xhtml" xmlns:paginate="http://www.w3.org/1999/xhtml"
+    xmlns:itemsPerPage="http://www.w3.org/1999/xhtml" xmlns:currentPage="http://www.w3.org/1999/xhtml">La Liste de mes Utilisateurs Archivés</h1>
+<hr>
+<div class="row">
+  <div class="col-sm m-auto">
+    <input type="text" class="float-left" [(ngModel)]="search" placeholder="Recherchez ici">
+    <table class="table table-info">
+      <thead>
+      <tr class="bg-dark text-center" style="color: white">
+        <th scope="col">Photo</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Profil</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let user of users | filter: search:'email' | paginate : { itemsPerPage: 6, currentPage: p }">
+      <tr class="text-center">
+        <th scope="row">
+            <img src="{{transformPhoto (user.photo)}}" alt="">
+        </th>
+        <td>{{user.prenom}}</td>
+        <td>{{user.nom}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.profil.libelle}}</td>
+        <td>
+          <a  class="btn btn-outline-warning" (click)="DesarchiverUser(user.id)">Désarchiver</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-info" [routerLink]="['/home','list-users']">retour aux users</button>
+    <pagination-controls class="float-right" (pageChange)="p = $event">
+
+    </pagination-controls>
+  </div>
+</div>
+

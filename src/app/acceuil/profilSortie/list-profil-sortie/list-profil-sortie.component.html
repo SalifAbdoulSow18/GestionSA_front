@@ -1,0 +1,31 @@
+<h1 class="text-center">La liste de mes Profils de sortie</h1>
+<hr>
+<div class="row">
+  <div class="col-sm-9 m-auto">
+    <form #addProfilsorti="ngForm" (ngSubmit)="AjoutProfilSortie(addProfilsorti)">
+      <div class="form-group" class="float-left">
+        <input type="text" class="mr-2" name="libelle" ngModel class="form-control" [hidden]="status" required>
+      </div>
+      <button class="btn btn-info float-right mb-2" (click)="status=!status" type="submit" ><i class="fa fa-user-plus">Créer</i></button>
+    </form>
+    <table class="table table-info">
+      <thead>
+      <tr class="bg-dark text-center" style="color: white">
+        <th scope="col">Libelle</th>
+        <th scope="col">Action</th>
+      </tr>
+      </thead>
+      <tbody *ngFor="let profilSortie of profilSorties">
+      <tr class="text-center">
+        <td style="font-weight: bold"><input type="text" style="display: none" id="profil{{profilSortie.id}}" value="{{profilSortie.libelle}}"><span id="profile{{profilSortie.id}}">{{profilSortie.libelle}}</span></td>
+        <td>
+          <a class="btn btn-outline-info mr-2">Details</a>
+          <a class="btn btn-outline-warning mr-2" (click)="updateProfilSortie(profilSortie)" (click)="editProfilSortie(profilSortie)">Edit</a>
+          <a (click)="removeProfilSortie(profilSortie.id)" class="btn btn-outline-danger">Delete</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

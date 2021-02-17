@@ -1,0 +1,18 @@
+<div style="width: 18rem; margin-left: 5%; text-align: center;">
+  <div class="card-header bg-info text-light">{{groupeCompetence.libelle}}
+    <a  [routerLink]="['/home','edit-grp-competence', groupeCompetence.id]"><i class="fa fa-edit"></i></a>
+    <a (click)="removeGrpCompetence(groupeCompetence.id)"><i class="fa fa-trash"></i></a>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><span class="text-danger">Description:  </span>{{groupeCompetence.description | summarize:50}}</h5>
+
+  </div>
+  <div class="card-footer">
+    <h5>Les Competences du Groupe Competence {{groupeCompetence.libelle}} sont : ...</h5>
+  </div>
+  <!--<div class="card-footer" *ngFor="let competence of groupeCompetence.competences">
+    <p>{{competence.nomCompetence }}</p>
+  </div>-->
+  <a class="btn w-75 btn-outline-warning" [routerLink]="['/home','list-grp-competences',groupeCompetence.id]">Detail</a>
+
+</div>

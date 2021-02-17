@@ -1,0 +1,18 @@
+<h6 class="display-4 text-center">Détails du Groupe Competence</h6>
+<div class="row">
+  <div class="col-sm-8 m-auto">
+    <button class="btn btn-info mb-2" [routerLink]="['/home','list-grp-competences']"><i class="fas fa-undo-alt">Retour</i></button>
+    <button class="btn btn-warning float-right mb-2" [routerLink]="['/home','edit-grp-competence', grpCompetences.id]"><i class="far fa-edit">Edit</i></button>
+    <div class="card text-center">
+      <h4><span class="font-weight-bold">Libelle:</span> {{grpCompetences.libelle}}</h4>
+      <hr />
+      <h4><span class="font-weight-bold">Description:</span> {{grpCompetences.description}}</h4>
+      <hr />
+      <h4 class="font-weight-bold">Mes Competences</h4>
+      <div class="card-body" *ngFor="let competence of grpCompetences.competences">
+        <h5 class="card-text">- {{competence.nomCompetence}}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+

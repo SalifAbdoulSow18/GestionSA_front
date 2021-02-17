@@ -1,0 +1,18 @@
+.modif {
+  position: absolute;
+  margin-left: 35%;
+}
+.complet {
+  border: solid grey 3px;
+}
+.mesLabel label {
+  color: red;
+  font-weight: bold;
+}
+.listcomp {
+  height: 300px;
+  border: solid cadetblue 2px;
+}
+.selection {
+  height: 50px;
+}
