@@ -94,7 +94,7 @@ export class EditGrpCompetenceComponent implements OnInit {
           showConfirmButton: false,
           timer: 2500
         });
-        setTimeout(() => {this.router.navigate(['/home', 'list-grp-competences']); }, 3000);
+        setTimeout(() => {this.router.navigate(['/home', 'list-grp-competences', this.idEdit]); }, 3000);
         console.log('good');
       }, error => {
         console.log(error);

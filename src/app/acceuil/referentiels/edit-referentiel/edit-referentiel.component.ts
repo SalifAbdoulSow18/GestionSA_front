@@ -85,36 +85,6 @@ export class EditReferentielComponent implements OnInit {
   get f(): any {
     return this.myForm.controls;
   }
-  // tslint:disable-next-line:typedef
- /* onSubmit() {
-    this.submitted = true;
-    const formValue = this.myForm.value ;
-    console.log(formValue);
-    const myReferentiel = {
-      libelle: formValue.libelle,
-      groupeCompetences: formValue.gprCompetence,
-      programme : formValue.programme,
-      presentation: formValue.presentation,
-      critereEvaluation: formValue.critereEvaluation,
-      critereAdmission : formValue.critereAdmission,
-    };
-    console.log(myReferentiel);
-    this.referentielService.editReferentiel(myReferentiel, this.idEdit).subscribe(
-      data => {
-        Swal.fire({
-          position: 'top-end',
-          icon: 'success',
-          title: 'Your work has been saved',
-          showConfirmButton: false,
-          timer: 2500
-        });
-        setTimeout(() => {this.router.navigate(['/home', 'list-referentiels']); }, 3000);
-        console.log('good');
-      }, error => {
-        console.log(error);
-      }
-    );
-  }*/
   uploadefiler(event: any): any {
     this.selectedFile =  event.target.files[0];
   }
@@ -148,7 +118,7 @@ export class EditReferentielComponent implements OnInit {
           showConfirmButton: false,
           timer: 2500
         });
-        setTimeout(() => {this.router.navigate(['/home', 'list-referentiels']); }, 3000);
+        setTimeout(() => {this.router.navigate(['/home', 'list-referentiels', this.idEdit]); }, 3000);
         console.log(reponse);
       }, (error) => {
         console.log(error);
