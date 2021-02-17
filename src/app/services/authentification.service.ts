@@ -42,11 +42,11 @@ export class AuthentificationService {
               console.log(localStorage.getItem('role'));
               this.router.navigate(['/home']);
             } else if (localStorage.getItem('role') === 'ROLE_FORMATEUR') {
-              this.router.navigate(['/formateur']);
+              this.router.navigate(['/home']);
             } else if (localStorage.getItem('role') === 'ROLE_CM') {
-              this.router.navigate(['/cm']);
+              this.router.navigate(['/home']);
             } else if (localStorage.getItem('role') === 'ROLE_APPRENANT') {
-              this.router.navigate(['/apprenant']);
+              this.router.navigate(['/home']);
             } else {
               Swal.fire({
                 icon: 'error',
